@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+nav {
+    background: #1a2a6c;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header.hero {
+    background: linear-gradient(to right, #f4f4f4, #e0e0e0);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.cta-secondary {
+    text-align: center;
+    background: #f9f9f9;
+}
+
+#pricing-tables {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.plan {
+    border: 2px solid #1a2a6c;
+    padding: 30px;
+    border-radius: 15px;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.plan:hover {
+    transform: translateY(-10px);
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #eee;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+input, select, button {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button, .btn-pricing {
+    background: #b21f1f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+button:hover {
+    background: #fdbb2d;
+    color: #1a2a6c;
+}
