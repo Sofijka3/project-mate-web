@@ -86,3 +86,13 @@ button:hover {
     background: #fdbb2d;
     color: #1a2a6c;
 }
+
+.plan-notification {
+    background: #1a2a6c;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
