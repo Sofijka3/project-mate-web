@@ -1,7 +1,10 @@
 (function () {
     var variants = {
         A: { h1: 'ProjectMate', p: 'Połącz skille, stwórz projekt, zdobądź ocenę.' },
-        B: { h1: 'Znajdź swój zespół projektowy', p: 'Matchuj się z innymi studentami i buduj projekty razem.' }
+        B: { 
+            h1: 'Znajdź swój zespół projektowy', 
+            p: 'Matchuj się z innymi studentami i buduj projekty razem.' 
+        }
     };
 
     var variant = localStorage.getItem('ab_variant');
@@ -13,6 +16,7 @@
     var v = variants[variant];
     if (!v) {
         v = variants['A'];
+        localStorage.setItem('ab_variant', 'A');
     }
     document.querySelector('.hero h1').textContent = v.h1;
     document.querySelector('.hero p').textContent = v.p;
