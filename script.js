@@ -1,5 +1,28 @@
+(function () {
+    var variants = {
+        A: { h1: 'ProjectMate', p: 'Połącz skille, stwórz projekt, zdobądź ocenę.' },
+        B: { h1: 'Znajdź swój zespół projektowy', p: 'Matchuj się z innymi studentami i buduj projekty razem.' }
+    };
+
+    var variant = localStorage.getItem('ab_variant');
+    if (!variant) {
+        variant = Math.random() < 0.5 ? 'A' : 'B';
+        localStorage.setItem('ab_variant', variant);
+    }
+
+    var v = variants[variant];
+    if (!v) {
+        v = variants['A'];
+    }
+    document.querySelector('.hero h1').textContent = v.h1;
+    document.querySelector('.hero p').textContent = v.p;
+
+    dataLayer.push({ event: 'ab_impression', variant: variant });
+})();
+
 document.getElementById('cta-main').addEventListener('click', function () {
-    dataLayer.push({ event: 'CTA_click', cta_id: 'cta-main', cta_location: 'hero' });
+    var variant = localStorage.getItem('ab_variant');
+    dataLayer.push({ event: 'CTA_click', cta_id: 'cta-main', cta_location: 'hero', variant: variant });
     document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -11,7 +34,8 @@ document.getElementById('cta-secondary').addEventListener('click', function () {
 document.getElementById('signup-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var email = this.querySelector('input[name="email"]').value;
-    dataLayer.push({ event: 'form_submit', form_email: email });
+    var variant = localStorage.getItem('ab_variant');
+    dataLayer.push({ event: 'form_submit', form_email: email, variant: variant });
     alert('Dziękujemy za zapisanie się! Potwierdzenie wyślemy na: ' + email);
 });
 
